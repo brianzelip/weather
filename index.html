@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="weather-icons.min.css">
+    <link rel="stylesheet" href="https://npmcdn.com/basscss@7.1.1/css/basscss.min.css">
+    <title>getLocalWeather</title>
+    <meta name="description" content="Web app that displays local weather. Built to solve a FreeCodeCamp.com challenge.">
+    <meta name="author" content="Brian Zelip">
+    <meta name="keywords" content="sandbox, FreeCodeCamp, geolocation, javascript">
+    <style>
+      .vh100 { min-height: 100vh; }
+      .mh600 { min-height: 600px; }
+      .h0 { font-size: 2.5rem; }
+      @media(min-width: 36em) {
+        .h0 { font-size: 4rem; }
+      }
+      #icon { font-size: 7rem; }
+      @media(min-width: 36em) {
+        #icon { font-size: 10rem; }
+      }
+      @media(min-width: 36em) {
+        .sm-mt3 { margin-top: 2rem; }
+        .sm-mb3 { margin-bottom: 2rem; }
+        .sm-px1 {
+          padding-left: .5rem;
+          padding-right: .5rem;
+        }
+      }
+      .btn-sm {
+        padding-top: .5rem;
+        padding-right: 0;
+        padding-bottom: .5rem;
+        padding-left: 0;
+      }
+      @media(min-width: 36em) {
+        .btn-sm {
+          padding-top: .5rem;
+          padding-right: .5rem;
+          padding-bottom: .5rem;
+          padding-left: .5rem;
+        }
+      }
+      @media(min-width: 52em) {
+        .md-mt4 { margin-top: 3rem; }
+      }
+      .justify-center { justify-content: center; }
+      .space-around { justify-content: space-around; }
+      .space-between { justify-content: space-between; }
+      .pxxsm { padding: 0.25rem; }
+      .px0 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .pt2 { padding-top: 1rem; }
+      .pt3 { padding-top: 2rem; }
+      .pb1 { padding-bottom: .5rem; }
+      .pb2 { padding-bottom: 1rem; }
+      .pb3 { padding-bottom: 2rem; }
+      .dotted { border-style: dotted; }
+      .bg-image {
+        /*background-image: url(img/lorangerie-2.jpg);*/
+        background-color: #08c;
+        position: fixed;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+      }
+      .dim { background: rgba(0, 0, 0, 0.2); }
+      .blue-dim { color: rgb(0,108,163); }
+      .border-white { border-color: white; }
+      .blue { color: #08c; }
+    </style>
+  </head>
+
+  <body style="background-color: rgba(0,0,0,.075);" class="p2">
+
+    <div class="bg-image">
+
+      <div class="container clearfix md-mt4">
+        <div class="md-col-6 mx-auto">
+          <div class="p2 rounded dim">
+
+            <section class="clearfix mt2 mb2 sm-mt3 sm-mb3 center">
+              <a href="#" id="appButton" class="btn btn-primary bg-white blue-dim">Get Local Weather</a>
+            </section>
+
+            <section class="clearfix center white">
+              <p id="city" class="h0 bold mb2 sm-mb3 line-height-1 overflow-hidden">&nbsp;</p>
+
+              <p id="weather" class="h1 mb2 sm-mb3 line-height-1">&nbsp;</p>
+
+              <div class="flex flex-center justify-center mb2 sm-mb3">
+
+                <p id="icon" class="m0 line-height-1 px1">&nbsp;</p>
+
+                <div class="flex flex-column flex-start justify-center space-around sm-px1">
+                  <p id="temp" class="h0 m0 line-height-1 sm-px1" style="border: 1px solid transparent;">&nbsp;</p>
+                  <a id="tempToggleButton" class="white btn btn-sm left-align"></a>
+                </div>
+
+              </div>
+
+              <p id="time" class="h1 mb2 line-height-1">&nbsp;</p>
+            </section>
+
+          </div>
+          <footer class="pt2 center white">Crafted by <a class="white" href="https://twitter.com/bzelip">bzelip</a> during <a class="white" href="https://www.freecodecamp.com">FreeCodeCamp</a></footer>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+  </body>
+
+</html>
