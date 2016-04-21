@@ -23,6 +23,7 @@ appButton.onclick = function() {
     var celsius = parseFloat(openWeatherData.main.temp - 273.15).toFixed(1);
     var fahrenheit = parseFloat((openWeatherData.main.temp - 273.15)* 1.8
 + 32).toFixed(1);
+    console.log(weatherAPI);
 
     // Populate the DOM
     city.innerHTML = openWeatherData.name;
@@ -45,8 +46,13 @@ appButton.onclick = function() {
       }
     };
 
-    // deciding to comment out displaying the weather description info (ie: "clear sky")
     weather.innerHTML = openWeatherData.weather[0].description;
+    // Give the whitespace more consistancy by adding margin-top to icon and temp <p>s
+    // if the icon is larger than clear sky's sun and moon.
+    if (openWeatherData.weather[0].id != 800) {
+      icon.className += " mt3";
+      temp.className += " mt3";
+    }
 
     // compare local time with weather data for proper icon (day or night)
     var currentLocalTime = Math.round(new Date().getTime()/1000.0);
@@ -113,7 +119,8 @@ appButton.onclick = function() {
         "https://erikflowers.github.io/weather-icons/",
         "http://adamwhitcroft.com/climacons/"
       ]
-    }
+    },
+    "add class name with javascript": "http://stackoverflow.com/a/36345551/2145103"
   }
 }
 */
