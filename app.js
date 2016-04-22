@@ -50,8 +50,8 @@ appButton.onclick = function() {
     // Give the whitespace more consistancy by adding margin-top to icon and temp <p>s
     // if the icon is larger than clear sky's sun and moon.
     if (openWeatherData.weather[0].id != 800) {
-      icon.className += " mt3";
-      temp.className += " mt3";
+      icon.className += " mt2";
+      temp.className += " mt2";
     }
 
     // compare local time with weather data for proper icon (day or night)
